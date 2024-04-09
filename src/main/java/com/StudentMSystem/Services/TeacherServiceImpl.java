@@ -23,8 +23,10 @@ public class TeacherServiceImpl implements TeacherService{
             existingTeacher.setLastName(updatedTeacher.getLastName());
             existingTeacher.setContact(updatedTeacher.getContact());
             existingTeacher.setEmail(updatedTeacher.getEmail());
+            existingTeacher.setUserName(updatedTeacher.getUserName());
+            existingTeacher.setPassword(updatedTeacher.getPassword());
+            existingTeacher.setRole(updatedTeacher.getRole());
             existingTeacher.setTeachingSubjects(updatedTeacher.getTeachingSubjects());
-            existingTeacher.setUsers(updatedTeacher.getUsers());
 
             teachersRepository.save(existingTeacher);
         }
@@ -35,13 +37,11 @@ public class TeacherServiceImpl implements TeacherService{
         return teachersRepository.save(teacher).getTeacherID();
     }
 
-//    Find all teachers
     @Override
     public List<Teacher> getAllTeachers() {
         return teachersRepository.findAll();
     }
 
-//    Find teacher by ID
     @Override
     public Teacher getTeacherById(String teacherID) {
         return teachersRepository.findById(teacherID).orElse(null);
@@ -51,9 +51,9 @@ public class TeacherServiceImpl implements TeacherService{
     public void deleteTeacherByID(String teacherID) {
         teachersRepository.deleteById(teacherID);
     }
-//
-//    @Override
-//    public List<Teacher> getTeacherName(String name) {
-//        return null;
-//    }
+
+    @Override
+    public Teacher getTeacherByEmailAndPassword(String email, String password) {
+        return teachersRepository.findByEmailAndPassword(email, password);
+    }
 }

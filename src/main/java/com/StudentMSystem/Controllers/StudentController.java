@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/v1/student")
 public class StudentController {
 
@@ -50,8 +49,7 @@ public class StudentController {
 
 //    Updating student details
     @PutMapping("/{studentId}")
-    public void updateStudent(@PathVariable String studentId, @RequestBody Student updatedStudent){
+    public void updateStudent(@PathVariable String studentId, @RequestBody Student updatedStudent) {
         studentService.updateStudent(studentId, updatedStudent);
     }
-
 }

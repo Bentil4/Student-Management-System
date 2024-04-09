@@ -6,18 +6,21 @@ import java.util.List;
 
 public interface TeacherService {
 
-//    Update teacher details
+    // Update teacher details
     void updateTeacher(String teacherID, Teacher updatedTeacher);
 
+    // Save new teacher data
     String teachersData(Teacher teacher);
 
-//    Get all teachers
+    // Get all teachers
     List<Teacher> getAllTeachers();
 
-//    Get teacher by ID
+    // Get teacher by ID
     Teacher getTeacherById(String teacherID);
 
+    // Delete teacher by ID
     void deleteTeacherByID(String teacherID);
-//
-//    List<Teacher> getTeacherName(String name);
+
+    // Get teacher by email and password for login
+    Teacher getTeacherByEmailAndPassword(String email, String password);
 }

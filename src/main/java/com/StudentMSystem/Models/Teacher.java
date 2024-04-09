@@ -18,6 +18,11 @@ public class Teacher {
     private String lastName;
     private String contact;
     private String email;
+    private String userName;
+    private String password;
+    private String role;
     private List<TeachingSubject> teachingSubjects;
-    private List<User> users;
+//    private List <User> users;
+
+
 }
