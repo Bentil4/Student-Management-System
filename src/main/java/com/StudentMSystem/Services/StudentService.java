@@ -19,6 +19,12 @@ public interface StudentService {
     Student getStudentById(String studentId);
 
     void updateStudent(String studentId, Student updatedStudent);
+
+    List<Student> getStudentsByClass(String studentClass);
+
+
+//    Getting student by class name
+    
 }
 
 

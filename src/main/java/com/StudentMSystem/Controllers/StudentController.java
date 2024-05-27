@@ -27,7 +27,14 @@ public class StudentController {
         return studentService.getStudentName(name);
     }
 
-//    Displaying lis of students
+    //    Getting Students by class
+    @GetMapping("/class/{studentClass}")
+    public List<Student> getStudentsByClass(@PathVariable("studentClass") String studentClass) {
+        return studentService.getStudentsByClass(studentClass);
+    }
+
+
+    //    Displaying lis of students
     @GetMapping("/allStudent")
     public List<Student> getAllStudent(){
         return studentService.getAllStudent();
@@ -46,10 +53,10 @@ public class StudentController {
         return studentService.getStudentById(studentId);
     }
 
-
 //    Updating student details
     @PutMapping("/{studentId}")
     public void updateStudent(@PathVariable String studentId, @RequestBody Student updatedStudent) {
         studentService.updateStudent(studentId, updatedStudent);
     }
+
 }

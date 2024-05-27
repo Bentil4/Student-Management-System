@@ -66,5 +66,22 @@ public class StudentServiceImpl implements StudentService{
         }
     }
 
+    //    Getting Student by class/form
+    @Override
+    public List<Student> getStudentsByClass(String studentClass) {
+        return studentRepository.findByStudentClass(studentClass);
+    }
+
+
+
+
+//    public List<Student> getStudentsByClass(String studentClass) {
+//        return studentRepository.findByStudentClass(studentClass);
+//    }
+
+
+//
+//    public Student getStudentById(String studentId) {
+//        return studentRepository.findById(studentId).orElse(null);
 
 }

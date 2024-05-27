@@ -21,7 +21,6 @@ public class TeacherController {
 
 //    Login Route
 
-
     @PostMapping("/login")
     public ResponseEntity<Teacher> loginTeacher(@RequestBody Teacher teacher) {
         Teacher foundTeacher = teacherService.getTeacherByEmailAndPassword(teacher.getEmail(), teacher.getPassword());
