@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface TeachersRepository extends MongoRepository<Teacher, String> {
     Teacher findByEmailAndPassword(String email, String password);
 
-
 //    Teacher findByEmail(String );
 }

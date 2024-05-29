@@ -2,7 +2,6 @@ package com.StudentMSystem.Models;
 
 import java.util.List;
 
-
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -10,7 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Builder
-
 @Document(collection = "student")
 public class Student {
     @Id
@@ -25,7 +23,4 @@ public class Student {
     private List<Subject> subjects;
     private List<Address> addresses;
     private List<Guardian> guardian;
-
-
-
 }

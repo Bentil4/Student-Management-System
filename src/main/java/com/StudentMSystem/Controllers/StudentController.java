@@ -28,8 +28,8 @@ public class StudentController {
     }
 
     //    Getting Students by class
-    @GetMapping("/class/{studentClass}")
-    public List<Student> getStudentsByClass(@PathVariable("studentClass") String studentClass) {
+    @GetMapping("/class")
+    public List<Student> getStudentsByClass(@RequestParam("studentClass") String studentClass) {
         return studentService.getStudentsByClass(studentClass);
     }
 
